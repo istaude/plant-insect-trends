@@ -1,7 +1,7 @@
 source("00-preamble.R")
 
 # load data ---------------------------------------------------------------
-d <- read_csv("RL_inter_plant_insect-MARCH2024.csv")
+d <- read_csv("RL_inter_plant_insect-APRIL2024.csv")
 
 # how many insect species per taxon
 d %>% group_by(taxon) %>% summarise(n_distinct(insect_species))
@@ -16,7 +16,7 @@ d <- d %>% select(taxon_trivial, insect_species, plant_species_RL, plant_genus) 
 
 d <- bind_rows(
   d,
-  read_csv("RL_inter_plant_insect-MARCH2024.csv") %>% 
+  read_csv("RL_inter_plant_insect-APRIL2024.csv") %>% 
     group_by(plant_genus) %>% 
     summarise(n = n_distinct(insect_species)) %>% 
     mutate(taxon_trivial = "All taxa")
@@ -26,7 +26,7 @@ d <- bind_rows(
 # change order of facet labels
 d$taxon_trivial <- factor(
   d$taxon_trivial,
-  levels = c("All taxa", "Bees", "Butterflies", "Sawflies", "Hoverflies")
+  levels = c("All taxa", "Bees", "Butterflies & moths", "Sawflies", "Hoverflies")
 )
 
 # histogram
@@ -51,11 +51,11 @@ d$taxon_trivial <- factor(
 # mean percent of taxon hosted
 d <- full_join(d,
                bind_rows(
-               read_csv("RL_inter_plant_insect-MARCH2024.csv") %>% 
+               read_csv("RL_inter_plant_insect-APRIL2024.csv") %>% 
                  select(taxon_trivial, insect_species, plant_species_RL, plant_genus) %>% 
                  group_by(taxon_trivial) %>% 
                  summarise(n_tot = n_distinct(insect_species)),
-               read_csv("RL_inter_plant_insect-MARCH2024.csv") %>% 
+               read_csv("RL_inter_plant_insect-APRIL2024.csv") %>% 
                  select(taxon_trivial, insect_species, plant_species_RL, plant_genus) %>% 
                  summarise(n_tot = n_distinct(insect_species)) %>% 
                  mutate(taxon_trivial = "All taxa")
@@ -76,11 +76,11 @@ top_genera <- d %>%
 # change order of facet labels
 top_genera$taxon_trivial <- factor(
   top_genera$taxon_trivial,
-  levels = c("All taxa", "Bees", "Butterflies", "Sawflies", "Hoverflies")
+  levels = c("All taxa", "Bees", "Butterflies & moths", "Sawflies", "Hoverflies")
 )
 d$taxon_trivial <- factor(
   d$taxon_trivial,
-  levels = c("All taxa", "Bees", "Butterflies", "Sawflies", "Hoverflies")
+  levels = c("All taxa", "Bees", "Butterflies & moths", "Sawflies", "Hoverflies")
 )
 
 # plot
@@ -119,7 +119,7 @@ d$taxon_trivial <- factor(
 # accumulation curves -----------------------------------------------------
 
 # for all taxa
-d <- read_csv("RL_inter_plant_insect-MARCH2024.csv")
+d <- read_csv("RL_inter_plant_insect-APRIL2024.csv")
 # ensure uniqueness within each plant-insect pair
 data_unique <- distinct(d, plant_genus, insect_species)
 
@@ -156,7 +156,7 @@ accumulation_data_all <- data.frame(
 )
 
 # for apiformes
-d <- read_csv("RL_inter_plant_insect-MARCH2024.csv") %>% filter(taxon == "Apiformes")
+d <- read_csv("RL_inter_plant_insect-APRIL2024.csv") %>% filter(taxon == "Apiformes")
 data_unique <- distinct(d, plant_genus, insect_species)
 
 selected_genera <- character()
@@ -190,7 +190,7 @@ accumulation_data_apiformes <- data.frame(
 
 
 # for lepidoptera
-d <- read_csv("RL_inter_plant_insect-MARCH2024.csv") %>% filter(taxon == "Lepidoptera")
+d <- read_csv("RL_inter_plant_insect-APRIL2024.csv") %>% filter(taxon == "Lepidoptera")
 data_unique <- distinct(d, plant_genus, insect_species)
 
 selected_genera <- character()
@@ -223,7 +223,7 @@ accumulation_data_lepidoptera <- data.frame(
 )
 
 # for symphyta
-d <- read_csv("RL_inter_plant_insect-MARCH2024.csv") %>% filter(taxon == "Symphyta")
+d <- read_csv("RL_inter_plant_insect-APRIL2024.csv") %>% filter(taxon == "Symphyta")
 data_unique <- distinct(d, plant_genus, insect_species)
 
 selected_genera <- character()
@@ -256,7 +256,7 @@ accumulation_data_symphyta <- data.frame(
 )
 
 # for syrphidae
-d <- read_csv("RL_inter_plant_insect-MARCH2024.csv") %>% filter(taxon == "Syrphidae")
+  d <- read_csv("RL_inter_plant_insect-APRIL2024.csv") %>% filter(taxon == "Syrphidae")
 data_unique <- distinct(d, plant_genus, insect_species)
 
 selected_genera <- character()
@@ -302,7 +302,7 @@ d <- bind_rows(
         max(CumulativeSpecies) * 100
     ),
     accumulation_data_lepidoptera %>% mutate(
-      taxon_trivial = "Butterflies",
+      taxon_trivial = "Butterflies & moths",
       percentage_insects_covered = CumulativeSpecies /
         max(CumulativeSpecies) * 100
     ),
@@ -333,11 +333,11 @@ x <- d %>% group_by(taxon_trivial) %>%
 # change order of facet labels
 x$taxon_trivial <- factor(
   x$taxon_trivial,
-  levels = c("All taxa", "Bees", "Butterflies", "Sawflies", "Hoverflies")
+  levels = c("All taxa", "Bees", "Butterflies & moths", "Sawflies", "Hoverflies")
 )
 d$taxon_trivial <- factor(
   d$taxon_trivial,
-  levels = c("All taxa", "Bees", "Butterflies", "Sawflies", "Hoverflies")
+  levels = c("All taxa", "Bees", "Butterflies & moths", "Sawflies", "Hoverflies")
 )
 
 
@@ -371,7 +371,7 @@ d$taxon_trivial <- factor(
   ) -> fig3c)
 
 
-# mulitpanel --------------------------------------------------------------
+# multipanel --------------------------------------------------------------
 
 fig3a /
   fig3c /

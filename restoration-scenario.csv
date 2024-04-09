@@ -1,0 +1,106 @@
+"","taxon_trivial","PlantSpecies","CumulativeSpecies","percentage_insects_covered"
+"1","All taxa","Salix caprea",282,13
+"2","All taxa","Ranunculus acris",448,20
+"3","All taxa","Quercus robur",546,24
+"4","All taxa","Lotus corniculatus",628,28
+"5","All taxa","Rubus idaeus",703,31
+"6","All taxa","Daucus carota",769,34
+"7","All taxa","Betula pubescens",827,37
+"8","All taxa","Rumex acetosella",884,39
+"9","All taxa","Prunus spinosa",938,42
+"10","All taxa","Festuca ovina",990,44
+"11","All taxa","Galium mollugo",1034,46
+"12","All taxa","Picea abies",1077,48
+"13","All taxa","Centaurea stoebe",1114,50
+"14","All taxa","Plantago major",1145,51
+"15","All taxa","Vaccinium myrtillus",1176,53
+"16","All taxa","Peucedanum officinale",1202,54
+"17","All taxa","Poa annua",1228,55
+"18","All taxa","Sinapis arvensis",1253,56
+"19","All taxa","Thymus serpyllum",1276,57
+"20","All taxa","Populus tremula",1298,58
+"21","All taxa","Achillea millefolium",1318,59
+"22","Bees","Sinapis arvensis",69,22
+"23","Bees","Lotus corniculatus",122,39
+"24","Bees","Picris hieracioides",145,46
+"25","Bees","Salix caprea",161,52
+"26","Bees","Echium vulgare",176,56
+"27","Bees","Campanula rotundifolia",186,60
+"28","Bees","Centaurea stoebe",196,63
+"29","Bees","Daucus carota",206,66
+"30","Bees","Trifolium pratense",214,69
+"31","Bees","Hieracium pilosella",220,71
+"32","Bees","Solidago gigantea",225,72
+"33","Bees","Stachys recta",230,74
+"34","Bees","Brassica napus",234,75
+"35","Bees","Calluna vulgaris",237,76
+"36","Bees","Cardamine pratensis",240,77
+"37","Bees","Jasione montana",243,78
+"38","Bees","Knautia arvensis",246,79
+"39","Bees","Vaccinium myrtillus",249,80
+"40","Bees","Anchusa officinalis",251,80
+"41","Bees","Bryonia dioica",253,81
+"42","Bees","Cerinthe minor",255,82
+"43","Butterflies","Salix caprea",155,13
+"44","Butterflies","Quercus robur",233,20
+"45","Butterflies","Rumex acetosa",303,26
+"46","Butterflies","Festuca ovina",355,31
+"47","Butterflies","Vaccinium myrtillus",402,35
+"48","Butterflies","Prunus spinosa",440,38
+"49","Butterflies","Galium mollugo",477,41
+"50","Butterflies","Artemisia vulgaris",508,44
+"51","Butterflies","Plantago lanceolata",536,47
+"52","Butterflies","Poa annua",561,49
+"53","Butterflies","Betula nana",585,51
+"54","Butterflies","Picea abies",609,53
+"55","Butterflies","Thymus serpyllum",633,55
+"56","Butterflies","Rubus idaeus",655,57
+"57","Butterflies","Cytisus scoparius",673,58
+"58","Butterflies","Lotus corniculatus",690,60
+"59","Butterflies","Polygonum aviculare",706,61
+"60","Butterflies","Silene vulgaris",722,63
+"61","Butterflies","Dactylis glomerata",737,64
+"62","Butterflies","Brassica oleracea",750,65
+"63","Butterflies","Clematis vitalba",763,66
+"64","Sawflies","Betula pubescens",31,7
+"65","Sawflies","Picea abies",50,11
+"66","Sawflies","Quercus robur",68,16
+"67","Sawflies","Rosa canina",84,19
+"68","Sawflies","Alnus glutinosa",99,23
+"69","Sawflies","Populus tremula",114,26
+"70","Sawflies","Rubus idaeus",129,30
+"71","Sawflies","Pinus sylvestris",143,33
+"72","Sawflies","Larix decidua",153,35
+"73","Sawflies","Prunus domestica",163,37
+"74","Sawflies","Pteridium aquilinum",173,40
+"75","Sawflies","Filipendula ulmaria",182,42
+"76","Sawflies","Festuca rubra",190,43
+"77","Sawflies","Salix caprea",198,45
+"78","Sawflies","Lonicera xylosteum",205,47
+"79","Sawflies","Plantago major",212,49
+"80","Sawflies","Sorbus aucuparia",219,50
+"81","Sawflies","Ranunculus repens",225,51
+"82","Sawflies","Acer campestre",230,53
+"83","Sawflies","Salix viminalis",235,54
+"84","Sawflies","Calamagrostis arundinacea",239,55
+"85","Hoverflies","Ranunculus repens",170,50
+"86","Hoverflies","Aegopodium podagraria",228,67
+"87","Hoverflies","Anthriscus caucalis",266,78
+"88","Hoverflies","Salix alba",289,85
+"89","Hoverflies","Crataegus laevigata",297,88
+"90","Hoverflies","Euphorbia nutans",305,90
+"91","Hoverflies","Potentilla erecta",309,91
+"92","Hoverflies","Geranium robertianum",312,92
+"93","Hoverflies","Hedera helix",315,93
+"94","Hoverflies","Caltha palustris",317,94
+"95","Hoverflies","Campanula latifolia",319,94
+"96","Hoverflies","Foeniculum vulgare",321,95
+"97","Hoverflies","Potentilla crantzii",323,95
+"98","Hoverflies","Prunus padus",325,96
+"99","Hoverflies","Anthemis austriaca",326,96
+"100","Hoverflies","Asparagus officinalis",327,96
+"101","Hoverflies","Chaerophyllum hirsutum",328,97
+"102","Hoverflies","Cirsium eriophorum",329,97
+"103","Hoverflies","Cornus sanguinea",330,97
+"104","Hoverflies","Crepis pyrenaica",331,98
+"105","Hoverflies","Cytisus scoparius",332,98

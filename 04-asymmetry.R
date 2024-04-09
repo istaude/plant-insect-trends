@@ -2,7 +2,7 @@ source("00-preamble.R")
 
 # asymmetry data prep -------------------------------------------
 
-d <- read_csv("RL_inter_plant_insect-MARCH2024.csv")
+d <- read_csv("RL_inter_plant_insect-APRIL2024.csv")
 
 # transf rl cats
 d <- d %>%
@@ -73,7 +73,7 @@ kruskal.test(plant_meanrlcat ~ specialization, dt)
 pairwise.wilcox.test(dt$plant_meanrlcat, dt$specialization,
                      p.adjust.method = "BH")
 
-dt <- d %>% filter(taxon_trivial == "Butterflies")
+dt <- d %>% filter(taxon_trivial == "Butterflies & moths")
 kruskal.test(plant_meanrlcat ~ specialization, dt)
 pairwise.wilcox.test(dt$plant_meanrlcat, dt$specialization,
                      p.adjust.method = "BH")
@@ -94,7 +94,7 @@ pairwise.wilcox.test(dt$plant_meanrlcat, dt$specialization,
 
 d$taxon_trivial <- factor(
   d$taxon_trivial,
-  levels = c("All taxa", "Bees", "Butterflies", "Sawflies", "Hoverflies")
+  levels = c("All taxa", "Bees", "Butterflies & moths", "Sawflies", "Hoverflies")
 )
 
 (ggplot(data = d,
@@ -124,7 +124,7 @@ dt$significance_category <- with(dt, ifelse(p.adj < 0.05, 'p < 0.05',
                                             ifelse(p.adj < 0.1, 'p < 0.1', 'p >= 0.1')))
 
 # melt the data
-data_melted <- melt(dt, id.vars = c("taxon_trivial", "group1", "group2", "significant", "significance_category"),
+data_melted <- melt(dt, id.vars = c("taxon_trivial", "group1", "group2", "significance_category"),
                     measure.vars = "p.adj")
 
 # convert group1 and group2 into ordered factors as before
@@ -135,7 +135,7 @@ data_melted <- data_melted %>%
 # sort
 data_melted$taxon_trivial <- factor(
   data_melted$taxon_trivial,
-  levels = c("All taxa", "Bees", "Butterflies", "Sawflies", "Hoverflies")
+  levels = c("All taxa", "Bees", "Butterflies & moths", "Sawflies", "Hoverflies")
 )
 
 # plot the heatmap
@@ -167,7 +167,7 @@ dt <- d %>% group_by(taxon_trivial) %>% count(specialization) %>% left_join(
 # sort
 dt$taxon_trivial <- factor(
   dt$taxon_trivial,
-  levels = c("All taxa", "Bees", "Butterflies", "Sawflies", "Hoverflies")
+  levels = c("All taxa", "Bees", "Butterflies & moths", "Sawflies", "Hoverflies")
 )
 
 

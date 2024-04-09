@@ -1,7 +1,7 @@
 source("00-preamble.R")
 
 # load data ---------------------------------------------------------------
-d <- read_csv("RL_inter_plant_insect-MARCH2024.csv")
+d <- read_csv("RL_inter_plant_insect-APRIL2024.csv")
 #View(d)
 
 
@@ -210,13 +210,13 @@ ext <- ext %>%
 ext <- ext %>% mutate(taxon_trivial = case_when(
   taxon == "All taxa" ~ "All taxa",
   taxon == "Apiformes" ~ "Bees",
-  taxon == "Lepidoptera" ~ "Butterflies",
+  taxon == "Lepidoptera" ~ "Butterflies & moths",
   taxon == "Symphyta" ~ "Sawflies",
   taxon == "Syrphidae" ~ "Hoverflies"
 )) %>% mutate(taxon_trivial = factor(taxon_trivial,
                                      levels = c("All taxa", 
                                                 "Bees", 
-                                                "Butterflies", 
+                                                "Butterflies & moths", 
                                                 "Sawflies", 
                                                 "Hoverflies")))
 
@@ -462,13 +462,13 @@ ext <- ext %>%
 ext <- ext %>% mutate(taxon_trivial = case_when(
   taxon == "All taxa" ~ "All taxa",
   taxon == "Apiformes" ~ "Bees",
-  taxon == "Lepidoptera" ~ "Butterflies",
+  taxon == "Lepidoptera" ~ "Butterflies & moths",
   taxon == "Symphyta" ~ "Sawflies",
   taxon == "Syrphidae" ~ "Hoverflies"
 )) %>% mutate(taxon_trivial = factor(taxon_trivial,
                                      levels = c("All taxa", 
                                                 "Bees", 
-                                                "Butterflies", 
+                                                "Butterflies & moths", 
                                                 "Sawflies", 
                                                 "Hoverflies")))
 

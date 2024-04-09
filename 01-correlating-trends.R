@@ -1,7 +1,7 @@
 source("00-preamble.R")
 
 # load data ---------------------------------------------------------------
-d <- read_csv("RL_inter_plant_insect-MARCH2024.csv")
+d <- read_csv("RL_inter_plant_insect-APRIL2024.csv")
 #View(d)
 
 
@@ -77,7 +77,7 @@ mod_st <- lm(plant_meanshortterm ~ insect_shortterm*taxon_trivial,
 anova(lm(plant_meanshortterm ~ insect_shortterm,
    shortterm %>% filter(taxon_trivial == "Bees")))
 anova(lm(plant_meanshortterm ~ insect_shortterm,
-         shortterm %>% filter(taxon_trivial == "Butterflies")))
+         shortterm %>% filter(taxon_trivial == "Butterflies & moths")))
 anova(lm(plant_meanshortterm ~ insect_shortterm,
          shortterm %>% filter(taxon_trivial == "Sawflies")))
 anova(lm(plant_meanshortterm ~ insect_shortterm,
@@ -92,7 +92,7 @@ shortterm %>% group_by(taxon_trivial) %>% summarise(n = n_distinct(insect_specie
    mutate(taxon_trivial = factor(taxon_trivial,
                                  levels = c("All taxa", 
                                             "Bees", 
-                                            "Butterflies", 
+                                            "Butterflies & moths", 
                                             "Sawflies", 
                                             "Hoverflies"))) %>% 
   ggplot(aes(
@@ -199,7 +199,7 @@ summary(mod_lt)
 anova(lm(plant_meanlongterm ~ insect_longterm,
          longterm %>% filter(taxon_trivial == "Bees")))
 anova(lm(plant_meanlongterm ~ insect_longterm,
-         longterm %>% filter(taxon_trivial == "Butterflies")))
+         longterm %>% filter(taxon_trivial == "Butterflies & moths")))
 anova(lm(plant_meanlongterm ~ insect_longterm,
          longterm %>% filter(taxon_trivial == "Sawflies")))
 anova(lm(plant_meanlongterm ~ insect_longterm,
@@ -215,7 +215,7 @@ longterm %>% group_by(taxon_trivial) %>% summarise(n = n_distinct(insect_species
    mutate(taxon_trivial = factor(taxon_trivial,
                                  levels = c("All taxa", 
                                             "Bees", 
-                                            "Butterflies", 
+                                            "Butterflies & moths", 
                                             "Sawflies", 
                                             "Hoverflies"))) %>% 
   ggplot(aes(
@@ -335,7 +335,7 @@ anova(lm(plant_meanrlcat ~ insect_rlcat,
 anova(lm(plant_meanrlcat ~ insect_rlcat,
          rlcat %>% filter(taxon_trivial == "Bees")))
 anova(lm(plant_meanrlcat ~ insect_rlcat,
-         rlcat %>% filter(taxon_trivial == "Butterflies")))
+         rlcat %>% filter(taxon_trivial == "Butterflies & moths")))
 anova(lm(plant_meanrlcat ~ insect_rlcat,
          rlcat %>% filter(taxon_trivial == "Sawflies")))
 anova(lm(plant_meanrlcat ~ insect_rlcat,
@@ -352,7 +352,7 @@ rlcat %>% group_by(taxon_trivial) %>% summarise(n = n_distinct(insect_species))
    mutate(taxon_trivial = factor(taxon_trivial,
                                  levels = c("All taxa", 
                                             "Bees", 
-                                            "Butterflies", 
+                                            "Butterflies & moths", 
                                             "Sawflies", 
                                             "Hoverflies"))) %>% 
    ggplot(aes(
@@ -419,7 +419,7 @@ fig1a -
                 mutate(taxon_trivial = factor(taxon_trivial,
                                               levels = c("All taxa", 
                                                          "Bees", 
-                                                         "Butterflies", 
+                                                         "Butterflies & moths", 
                                                          "Sawflies", 
                                                          "Hoverflies"))) , 
               aes(x = insect_shortterm, y = plant_meanshortterm, group = taxon_trivial), 
@@ -435,7 +435,7 @@ fig1b -
                 mutate(taxon_trivial = factor(taxon_trivial,
                                               levels = c("All taxa", 
                                                          "Bees", 
-                                                         "Butterflies", 
+                                                         "Butterflies & moths", 
                                                          "Sawflies", 
                                                          "Hoverflies"))) , 
               aes(x = insect_longterm, y = plant_meanlongterm, group = taxon_trivial), 
@@ -451,7 +451,7 @@ fig1c -
                 mutate(taxon_trivial = factor(taxon_trivial,
                                               levels = c("All taxa", 
                                                          "Bees", 
-                                                         "Butterflies", 
+                                                         "Butterflies & moths", 
                                                          "Sawflies", 
                                                          "Hoverflies"))) , 
               aes(x = insect_rlcat, y = plant_meanrlcat, group = taxon_trivial), 
@@ -489,7 +489,7 @@ confint(pairs(emmeans(mod_st, ~insect_shortterm|taxon_trivial))) %>% as_tibble()
   mutate(taxon_trivial = factor(taxon_trivial,
                                 levels = c("All taxa", 
                                            "Bees", 
-                                           "Butterflies", 
+                                           "Butterflies & moths", 
                                            "Sawflies", 
                                            "Hoverflies"))) %>% 
   ggplot(aes(
@@ -527,7 +527,7 @@ confint(pairs(emmeans(mod_lt, ~insect_longterm|taxon_trivial))) %>% as_tibble() 
   mutate(taxon_trivial = factor(taxon_trivial,
                                 levels = c("All taxa", 
                                            "Bees", 
-                                           "Butterflies", 
+                                           "Butterflies & moths", 
                                            "Sawflies", 
                                            "Hoverflies"))) %>% 
   ggplot(aes(
@@ -567,7 +567,7 @@ confint(pairs(emmeans(mod_rl, ~insect_rlcat|taxon_trivial), adjust = "none")) %>
   mutate(taxon_trivial = factor(taxon_trivial,
                                 levels = c("All taxa", 
                                            "Bees", 
-                                           "Butterflies", 
+                                           "Butterflies & moths", 
                                            "Sawflies", 
                                            "Hoverflies"))) %>% 
   ggplot(aes(

@@ -3,7 +3,7 @@ source("00-preamble.R")
 # are specialized insects more threatened? --------------------------------
 
 # prepare data
-d <- read_csv("RL_inter_plant_insect-MARCH2024.csv")
+d <- read_csv("RL_inter_plant_insect-APRIL2024.csv")
 
 # transf insect rl cats
 d <- d %>%
@@ -55,7 +55,7 @@ d$specialization <-
   factor(d$specialization, levels = c("mono", "oligo", "meso", "poly"))
 d$taxon_trivial <- factor(
   d$taxon_trivial,
-  levels = c("All taxa", "Bees", "Butterflies", "Sawflies", "Hoverflies")
+  levels = c("All taxa", "Bees", "Butterflies & moths", "Sawflies", "Hoverflies")
 )
 d$RL_Kat. <- factor(
   d$RL_Kat.,
@@ -76,10 +76,6 @@ head(d)
     axis.text = element_text(size = 12),
     axis.title = element_text(size = 14)
   ) +
-    labs(
-      title = "Monophagous/-lectic insect species are more threatened than generalists",
-      x = "Specialization insects",
-      y = "Percent RL threat status") +
   scale_fill_paletteer_d(palette = "colorBlindness::Blue2Gray8Steps")  -> fig_supp_threat_spec_a)
 
 
@@ -97,7 +93,7 @@ head(d)
       axis.title = element_text(size = 14),
       legend.position = "none"
     ) +
-    labs(
+    labs(title = "Monophagous/-lectic insect species are more threatened than generalists",
          x = "Specialization insects",
          y = "Threat status insects") -> fig_supp_threat_spec_b)
 
@@ -122,7 +118,7 @@ data_melted <- data_melted %>%
 # sort
 data_melted$taxon_trivial <- factor(
   data_melted$taxon_trivial,
-  levels = c("All taxa", "Bees", "Butterflies", "Sawflies", "Hoverflies")
+  levels = c("All taxa", "Bees", "Butterflies & moths", "Sawflies", "Hoverflies")
 )
 
 # plot the heatmap
@@ -171,7 +167,7 @@ selected_species <- character()
 cumulative_species <- numeric()
 unique_insects <- character()
 
-while(length(selected_species) <= 20) {
+while(length(selected_species) < 20) {
   remaining_species <- setdiff(unique(data_unique$plant_species_RL), selected_species)
   
   # store the count of new unique insects each genus would add
@@ -200,6 +196,7 @@ accumulation_data_all <- data.frame(
 
 
 
+
 # for apiformes
 d <- read_csv("RL_inter_plant_insect-MARCH2024.csv") %>% filter(taxon == "Apiformes")
 # ensure uniqueness within each plant-insect pair
@@ -210,7 +207,7 @@ selected_species <- character()
 cumulative_species <- numeric()
 unique_insects <- character()
 
-while(length(selected_species) <= 20) {
+while(length(selected_species) < 20) {
   remaining_species <- setdiff(unique(data_unique$plant_species_RL), selected_species)
   
   # store the count of new unique insects each genus would add
@@ -240,7 +237,7 @@ accumulation_data_all_apiformes <- data.frame(
 
 
 # for lepidoptera
-d <- read_csv("RL_inter_plant_insect-MARCH2024.csv") %>% filter(taxon == "Lepidoptera")
+d <- read_csv("RL_inter_plant_insect.csv") %>% filter(taxon == "Lepidoptera")
 # ensure uniqueness within each plant-insect pair
 data_unique <- distinct(d, plant_species_RL, insect_species)
 
@@ -249,7 +246,7 @@ selected_species <- character()
 cumulative_species <- numeric()
 unique_insects <- character()
 
-while(length(selected_species) <= 20) {
+while(length(selected_species) < 20) {
   remaining_species <- setdiff(unique(data_unique$plant_species_RL), selected_species)
   
   # store the count of new unique insects each genus would add
@@ -279,7 +276,7 @@ accumulation_data_all_lepidoptera <- data.frame(
 
 
 # for symphyta
-d <- read_csv("RL_inter_plant_insect-MARCH2024.csv") %>% filter(taxon == "Symphyta")
+d <- read_csv("RL_inter_plant_insect.csv") %>% filter(taxon == "Symphyta")
 # ensure uniqueness within each plant-insect pair
 data_unique <- distinct(d, plant_species_RL, insect_species)
 
@@ -288,7 +285,7 @@ selected_species <- character()
 cumulative_species <- numeric()
 unique_insects <- character()
 
-while(length(selected_species) <= 20) {
+while(length(selected_species) < 20) {
   remaining_species <- setdiff(unique(data_unique$plant_species_RL), selected_species)
   
   # store the count of new unique insects each genus would add
@@ -317,7 +314,7 @@ accumulation_data_all_symphyta <- data.frame(
 
 
 # for syrphidae
-d <- read_csv("RL_inter_plant_insect-MARCH2024.csv") %>% filter(taxon == "Syrphidae")
+d <- read_csv("RL_inter_plant_insect.csv") %>% filter(taxon == "Syrphidae")
 # ensure uniqueness within each plant-insect pair
 data_unique <- distinct(d, plant_species_RL, insect_species)
 
@@ -326,7 +323,7 @@ selected_species <- character()
 cumulative_species <- numeric()
 unique_insects <- character()
 
-while(length(selected_species) <= 20) {
+while(length(selected_species) < 20) {
   remaining_species <- setdiff(unique(data_unique$plant_species_RL), selected_species)
   
   # store the count of new unique insects each genus would add
@@ -355,14 +352,13 @@ accumulation_data_all_syrphidae <- data.frame(
 
 # before bringing everything together, calculate the number of host plant species
 # that are supported in each insect taxon
-d <- read_csv("RL_inter_plant_insect-MARCH2024.csv")
 d %>% select(taxon_trivial, insect_species, plant_species) %>% distinct %>% 
   group_by(taxon_trivial) %>% summarize(n_distinct(insect_species))
 d %>% select(taxon_trivial, insect_species, plant_species_RL) %>% distinct %>% 
   summarize(n_distinct(insect_species))
 
 # bring all taxa together, and add column of percentage covered
-dt <- bind_rows(
+d <- bind_rows(
   list(
     accumulation_data_all %>% mutate(
       taxon_trivial = "All taxa",
@@ -375,7 +371,7 @@ dt <- bind_rows(
         312 * 100
     ),
     accumulation_data_all_lepidoptera %>% mutate(
-      taxon_trivial = "Butterflies",
+      taxon_trivial = "Butterflies & moths",
       percentage_insects_covered = CumulativeSpecies /
         1151 * 100
     ),
@@ -391,7 +387,5 @@ dt <- bind_rows(
     )
   )
 )
-View(dt)
-dt <- dt %>% select(taxon_trivial, PlantSpecies, CumulativeSpecies, percentage_insects_covered)
-dt <- dt %>% mutate(percentage_insects_covered = round(percentage_insects_covered,0))
-write.csv(dt, "restoration-scenario.csv")
+View(d)
+write.csv(d, "restoration-scenario.csv")
