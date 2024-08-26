@@ -1,0 +1,106 @@
+"taxon_trivial";"PlantSpecies";"CumulativeSpecies";"percentage_insects_covered"
+"All taxa";"Salix caprea";57;8
+"All taxa";"Daucus carota";101;14
+"All taxa";"Lotus corniculatus";136;19
+"All taxa";"Crataegus laevigata";163;23
+"All taxa";"Betula pubescens";185;26
+"All taxa";"Centaurea scabiosa";207;29
+"All taxa";"Ranunculus acris";229;32
+"All taxa";"Festuca ovina";247;34
+"All taxa";"Thymus serpyllum";265;37
+"All taxa";"Plantago major";281;39
+"All taxa";"Quercus robur";297;41
+"All taxa";"Vaccinium uliginosum";311;43
+"All taxa";"Cytisus scoparius";324;45
+"All taxa";"Potentilla erecta";336;46
+"All taxa";"Campanula rotundifolia";347;48
+"All taxa";"Cirsium vulgare";358;49
+"All taxa";"Onobrychis viciifolia";369;51
+"All taxa";"Achillea millefolium";378;52
+"All taxa";"Populus tremula";387;53
+"All taxa";"Carex vesicaria";395;55
+"All taxa";"Galium verum";403;56
+"Bees";"Lotus corniculatus";28;18
+"Bees";"Sinapis arvensis";51;32
+"Bees";"Centaurea scabiosa";65;41
+"Bees";"Campanula rotundifolia";73;46
+"Bees";"Daucus carota";81;51
+"Bees";"Echium vulgare";88;56
+"Bees";"Cichorium intybus";94;59
+"Bees";"Helianthemum nummularium";99;63
+"Bees";"Salix caprea";104;66
+"Bees";"Centaurea jacea";108;68
+"Bees";"Stachys recta";112;71
+"Bees";"Eryngium campestre";115;73
+"Bees";"Knautia arvensis";118;75
+"Bees";"Onobrychis viciifolia";121;77
+"Bees";"Scorzoneroides autumnalis";124;78
+"Bees";"Anchusa officinalis";126;80
+"Bees";"Cardamine pratensis";128;81
+"Bees";"Convolvulus arvensis";130;82
+"Bees";"Jasione montana";132;84
+"Bees";"Trifolium repens";134;85
+"Bees";"Acer campestre";135;85
+"Butterflies & moths";"Salix caprea";29;8
+"Butterflies & moths";"Prunus spinosa";50;14
+"Butterflies & moths";"Vaccinium myrtillus";69;19
+"Butterflies & moths";"Festuca ovina";87;24
+"Butterflies & moths";"Plantago lanceolata";104;28
+"Butterflies & moths";"Thymus serpyllum";121;33
+"Butterflies & moths";"Quercus pubescens";134;37
+"Butterflies & moths";"Calluna vulgaris";146;40
+"Butterflies & moths";"Cytisus scoparius";157;43
+"Butterflies & moths";"Galium verum";167;46
+"Butterflies & moths";"Artemisia absinthium";176;48
+"Butterflies & moths";"Silene nutans";185;50
+"Butterflies & moths";"Poa annua";193;53
+"Butterflies & moths";"Rumex hydrolapathum";201;55
+"Butterflies & moths";"Polygonum aviculare";208;57
+"Butterflies & moths";"Populus nigra";214;58
+"Butterflies & moths";"Potentilla pusilla";220;60
+"Butterflies & moths";"Viola arvensis";226;62
+"Butterflies & moths";"Betula nana";231;63
+"Butterflies & moths";"Onobrychis viciifolia";236;64
+"Butterflies & moths";"Solidago virgaurea";241;66
+"Sawflies";"Betula pubescens";11;12
+"Sawflies";"Populus tremula";16;17
+"Sawflies";"Rosa canina";20;21
+"Sawflies";"Juncus conglomeratus";23;24
+"Sawflies";"Lonicera xylosteum";26;28
+"Sawflies";"Pinus sylvestris";29;31
+"Sawflies";"Plantago major";32;34
+"Sawflies";"Rubus caesius";35;37
+"Sawflies";"Alnus glutinosa";37;39
+"Sawflies";"Carpinus betulus";39;41
+"Sawflies";"Knautia arvensis";41;44
+"Sawflies";"Prunus avium";43;46
+"Sawflies";"Quercus robur";45;48
+"Sawflies";"Salix alba";47;50
+"Sawflies";"Senecio ovatus";49;52
+"Sawflies";"Sorbus aucuparia";51;54
+"Sawflies";"Abies alba";52;55
+"Sawflies";"Acer campestre";53;56
+"Sawflies";"Anemone sylvestris";54;57
+"Sawflies";"Betula pendula";55;59
+"Sawflies";"Brachypodium sylvaticum";56;60
+"Hoverflies";"Ranunculus repens";43;41
+"Hoverflies";"Crataegus dunensis";60;57
+"Hoverflies";"Aegopodium podagraria";72;69
+"Hoverflies";"Chaerophyllum villarsii";80;76
+"Hoverflies";"Caltha palustris";84;80
+"Hoverflies";"Cirsium palustre";86;82
+"Hoverflies";"Euphorbia peplus";88;84
+"Hoverflies";"Galium intermedium";90;86
+"Hoverflies";"Hedera helix";92;88
+"Hoverflies";"Prunus padus";94;90
+"Hoverflies";"Allium schoenoprasum";95;90
+"Hoverflies";"Anthemis austriaca";96;91
+"Hoverflies";"Asparagus officinalis";97;92
+"Hoverflies";"Campanula latifolia";98;93
+"Hoverflies";"Cornus sanguinea";99;94
+"Hoverflies";"Cytisus scoparius";100;95
+"Hoverflies";"Ornithogalum umbellatum";101;96
+"Hoverflies";"Scabiosa ochroleuca";102;97
+"Hoverflies";"Sedum album";103;98
+"Hoverflies";"Sorbus torminalis";104;99
+"Hoverflies";"Verbascum nigrum";105;100
