@@ -202,7 +202,7 @@ fig4c /
 
 
 showtext_opts(dpi=600)
-ggsave("Figures/figure4-main.png",
+ggsave("Figures/figure4-main-rev.pdf",
        bg = "white",
        height = 10,
        width = 12,

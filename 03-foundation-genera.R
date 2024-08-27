@@ -1,11 +1,7 @@
 source("00-preamble.R")
 
 # load data ---------------------------------------------------------------
-<<<<<<< HEAD:03-foundation-genera.R
 d <- read_csv("RL_inter_plant_insect-JUNE2024.csv")
-=======
-d <- read_csv("RL_inter_plant_insect-APRIL2024.csv")
->>>>>>> d886f7d3df8ad08e3719ab3c582223f5de5effe7:03-keystones.R
 
 # how many insect species per taxon
 d %>% group_by(taxon) %>% summarise(n_distinct(insect_species))
@@ -20,11 +16,7 @@ d <- d %>% select(taxon_trivial, insect_species, plant_species_RL, plant_genus) 
 
 d <- bind_rows(
   d,
-<<<<<<< HEAD:03-foundation-genera.R
   read_csv("RL_inter_plant_insect-JUNE2024.csv") %>% 
-=======
-  read_csv("RL_inter_plant_insect-APRIL2024.csv") %>% 
->>>>>>> d886f7d3df8ad08e3719ab3c582223f5de5effe7:03-keystones.R
     group_by(plant_genus) %>% 
     summarise(n = n_distinct(insect_species)) %>% 
     mutate(taxon_trivial = "All taxa")
@@ -59,19 +51,11 @@ d$taxon_trivial <- factor(
 # mean percent of taxon hosted
 d <- full_join(d,
                bind_rows(
-<<<<<<< HEAD:03-foundation-genera.R
                read_csv("RL_inter_plant_insect-JUNE2024.csv") %>% 
                  select(taxon_trivial, insect_species, plant_species_RL, plant_genus) %>% 
                  group_by(taxon_trivial) %>% 
                  summarise(n_tot = n_distinct(insect_species)),
                read_csv("RL_inter_plant_insect-JUNE2024.csv") %>% 
-=======
-               read_csv("RL_inter_plant_insect-APRIL2024.csv") %>% 
-                 select(taxon_trivial, insect_species, plant_species_RL, plant_genus) %>% 
-                 group_by(taxon_trivial) %>% 
-                 summarise(n_tot = n_distinct(insect_species)),
-               read_csv("RL_inter_plant_insect-APRIL2024.csv") %>% 
->>>>>>> d886f7d3df8ad08e3719ab3c582223f5de5effe7:03-keystones.R
                  select(taxon_trivial, insect_species, plant_species_RL, plant_genus) %>% 
                  summarise(n_tot = n_distinct(insect_species)) %>% 
                  mutate(taxon_trivial = "All taxa")
@@ -135,11 +119,7 @@ d$taxon_trivial <- factor(
 # accumulation curves -----------------------------------------------------
 
 # for all taxa
-<<<<<<< HEAD:03-foundation-genera.R
 d <- read_csv("RL_inter_plant_insect-JUNE2024.csv")
-=======
-d <- read_csv("RL_inter_plant_insect-APRIL2024.csv")
->>>>>>> d886f7d3df8ad08e3719ab3c582223f5de5effe7:03-keystones.R
 # ensure uniqueness within each plant-insect pair
 data_unique <- distinct(d, plant_genus, insect_species)
 
@@ -176,11 +156,7 @@ accumulation_data_all <- data.frame(
 )
 
 # for apiformes
-<<<<<<< HEAD:03-foundation-genera.R
 d <- read_csv("RL_inter_plant_insect-JUNE2024.csv") %>% filter(taxon == "Apiformes")
-=======
-d <- read_csv("RL_inter_plant_insect-APRIL2024.csv") %>% filter(taxon == "Apiformes")
->>>>>>> d886f7d3df8ad08e3719ab3c582223f5de5effe7:03-keystones.R
 data_unique <- distinct(d, plant_genus, insect_species)
 
 selected_genera <- character()
@@ -214,11 +190,7 @@ accumulation_data_apiformes <- data.frame(
 
 
 # for lepidoptera
-<<<<<<< HEAD:03-foundation-genera.R
 d <- read_csv("RL_inter_plant_insect-JUNE2024.csv") %>% filter(taxon == "Lepidoptera")
-=======
-d <- read_csv("RL_inter_plant_insect-APRIL2024.csv") %>% filter(taxon == "Lepidoptera")
->>>>>>> d886f7d3df8ad08e3719ab3c582223f5de5effe7:03-keystones.R
 data_unique <- distinct(d, plant_genus, insect_species)
 
 selected_genera <- character()
@@ -251,11 +223,7 @@ accumulation_data_lepidoptera <- data.frame(
 )
 
 # for symphyta
-<<<<<<< HEAD:03-foundation-genera.R
 d <- read_csv("RL_inter_plant_insect-JUNE2024.csv") %>% filter(taxon == "Symphyta")
-=======
-d <- read_csv("RL_inter_plant_insect-APRIL2024.csv") %>% filter(taxon == "Symphyta")
->>>>>>> d886f7d3df8ad08e3719ab3c582223f5de5effe7:03-keystones.R
 data_unique <- distinct(d, plant_genus, insect_species)
 
 selected_genera <- character()
@@ -288,11 +256,7 @@ accumulation_data_symphyta <- data.frame(
 )
 
 # for syrphidae
-<<<<<<< HEAD:03-foundation-genera.R
 d <- read_csv("RL_inter_plant_insect-JUNE2024.csv") %>% filter(taxon == "Syrphidae")
-=======
-  d <- read_csv("RL_inter_plant_insect-APRIL2024.csv") %>% filter(taxon == "Syrphidae")
->>>>>>> d886f7d3df8ad08e3719ab3c582223f5de5effe7:03-keystones.R
 data_unique <- distinct(d, plant_genus, insect_species)
 
 selected_genera <- character()
@@ -418,7 +382,7 @@ fig3a /
 showtext_opts(dpi=600)
 ggsave(bg = "white",
        dpi = 600,
-       "Figures/figure3-main.png",
+       "Figures/figure3-main-rev.pdf",
        width = 12,
        height = 10)
 showtext_opts(dpi=96)
