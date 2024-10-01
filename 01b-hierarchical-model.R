@@ -204,14 +204,14 @@ anova(lmer(plants_lang_Best_trans ~ insect_longterm + (1|insect_species),
 
 
 # multi
-figs1a /
+fig2a_supp /
   fig2b_supp /
   #  fig1c_supp +
   plot_layout(guides = "collect") & 
-  plot_annotation(tag_levels = 'a')
+  plot_annotation(tag_levels = 'A')
 
 showtext_opts(dpi=600)
-ggsave("Figures/figure1-hierarchical-supp-rev.png",
+ggsave("Figures/figure1-hierarchical-supp-rev.svg",
        bg = "white",
        height = 6.0,
        width = 8.0,

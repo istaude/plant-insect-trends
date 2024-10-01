@@ -537,7 +537,7 @@ df_combined <- bind_rows(
 showtext_opts(dpi=600)
 ggsave(bg = "white",
        dpi = 600,
-       "Figures/figure5-supp.png",
+       "Figures/figure5-supp.svg",
        width = 12,
        height = 3.3)
 showtext_opts(dpi=96)

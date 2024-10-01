@@ -292,8 +292,8 @@ fig2a <- ggplot(data = ext) +
   ) +
   guides(color = guide_legend( title.position = "top")) + 
   labs(x= "Threat status of host plants", 
-       title = "Co-extinctions of insects from sequential loss of host plants by Red List category",
-       color = "Insects survive if host plant diversity remains in their portfolio:")
+       title = "Insect co-extinctions following sequential loss of host plants by Red List category",
+       color = "Insect survival at different thresholds of host plant diversity remaining:")
 
 
 
@@ -443,7 +443,7 @@ fig2a /
 showtext_opts(dpi=600)
 ggsave(bg = "white",
        dpi = 600,
-       "Figures/figure2-main-rev.png",
+       "Figures/figure2-main-rev.pdf",
        width = 12,
        height = 8)
 showtext_opts(dpi=96)

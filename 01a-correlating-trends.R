@@ -391,7 +391,7 @@ fig1a /
   plot_annotation(tag_levels = 'a')
 
 showtext_opts(dpi=600)
-ggsave("Figures/figure1-main_rev.png",
+ggsave("Figures/figure1-main_rev.pdf",
        bg = "white",
        height = 6.0,
        width = 8.0,
@@ -468,10 +468,10 @@ fig1a_supp /
   fig1b_supp /
 #  fig1c_supp +
   plot_layout(guides = "collect") & 
-  plot_annotation(tag_levels = 'a')
+  plot_annotation(tag_levels = 'A')
 
 showtext_opts(dpi=600)
-ggsave("Figures/figure1-supp-rev.png",
+ggsave("Figures/figure1-supp-rev.svg",
        bg = "white",
        height = 6.0,
        width = 8.0,
@@ -603,10 +603,10 @@ fig1a_supp_pairwise /
   fig1b_supp_pairwise /
 #  fig1c_supp_pairwise +
   plot_layout(guides = "collect") & 
-  plot_annotation(tag_levels = 'a')
+  plot_annotation(tag_levels = 'A')
 
 showtext_opts(dpi=600)
-ggsave("Figures/figure1-supp-pairwise-rev.png",
+ggsave("Figures/figure1-supp-pairwise-rev.svg",
        bg = "white",
        height = 6.0,
        width = 10.0,
